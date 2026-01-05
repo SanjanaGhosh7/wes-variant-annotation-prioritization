@@ -96,30 +96,23 @@ It provides a baseline expectation against which disease cohorts can later be co
 
 
 
-Raw WES FASTQ files
-        │
-        ▼
-Quality Control (FastQC)
-        │
-        ▼
-Alignment to Reference Genome (GRCh38)
-        │
-        ▼
-Variant Calling (VCF generation)
-        │
-        ▼
-Variant Annotation (Ensembl VEP)
-        │
-        ▼
-Variant Prioritization
+1. **Raw WES FASTQ files**
+
+2. **Quality Control (FastQC)**
+   
+3. **Alignment to Reference Genome (GRCh38)**
+   
+4. **Variant Calling (VCF generation)**
+   
+5. **Variant Annotation (Ensembl VEP)**
+   
+6. **Variant Prioritization**
   ├─ Canonical transcripts
   ├─ Protein-coding variants
   ├─ HIGH / MODERATE impact
   └─ Rare alleles (gnomAD AF < 0.01)
-        │
-        ▼
-Exploratory Analysis & Visualization
-  (Impact vs AF, ClinVar overlay, summaries)
+
+7. **Exploratory Analysis & Visualization** (Impact vs AF, ClinVar overlay, summaries)
 
 
 
@@ -128,9 +121,8 @@ Exploratory Analysis & Visualization
 ## 🗂 Project Structure
 
 
-
+```text
 wes_chr22_project/
-│
 ├── scripts/
 │   ├── wes_variant_calling_pipeline.sh   # Alignment, post-processing & variant calling
 │   ├── vep_annotation.sh                 # Ensembl VEP-based variant annotation
@@ -145,11 +137,10 @@ wes_chr22_project/
 
 
 
+
 ## 
 
 ## ⚙️ Methodology
-
-
 
 
 
@@ -683,7 +674,7 @@ This project successfully demonstrates a research-grade variant prioritization w
 
 
 
-\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
+\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
 
 ## &nbsp;                       
 
@@ -732,21 +723,13 @@ These tools are required before running the pipeline:
 
 
 | Tool       | Purpose                                  | Version (recommended) |
-
 | ---------- | ---------------------------------------- | --------------------- |
-
 | `bwa`      | Read alignment                           | ≥ 0.7.17              |
-
 | `samtools` | BAM processing                           | ≥ 1.17                |
-
 | `gatk`     | Duplicate marking, BQSR, variant calling | ≥ 4.5                 |
-
-| `bcftools` | VCF manipulation \& filtering             | ≥ 1.18                |
-
+| `bcftools` | VCF manipulation \& filtering            | ≥ 1.18                |
 | `fastqc`   | Raw read QC                              | ≥ 0.12                |
-
 | `picard`   | (Used via GATK)                          | bundled               |
-
 | `java`     | Required for GATK                        | OpenJDK 17            |
 
 
@@ -762,16 +745,11 @@ Download and prepare the following (GATK Resource Bundle):
 
 
 | File                   | Purpose               |
-
 | ---------------------- | --------------------- |
-
 | `GRCh38 FASTA`         | Reference genome      |
-
 | `FAI + DICT`           | Required for GATK     |
-
 | `dbSNP VCF`            | Known variants (BQSR) |
-
-| `Mills \& 1000G indels` | Known indels (BQSR)   |
+| `Mills \& 1000G indels`| Known indels (BQSR)   |
 
 
 
