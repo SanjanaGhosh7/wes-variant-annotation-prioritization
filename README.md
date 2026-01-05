@@ -134,6 +134,7 @@ wes_chr22_project/
 │
 ├── README.md                             # Project documentation
 └── .gitignore                            # Excluded intermediate & system files
+```
 
 
 
