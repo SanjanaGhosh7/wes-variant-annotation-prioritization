@@ -425,6 +425,9 @@ This table serves as the input for all downstream analysis.
 
 
 
+
+
+
 ## 📊 Downstream Analysis (Jupyter Notebook)
 
 
@@ -579,6 +582,9 @@ Also, using Conda for the Notebook analysis ensured:
 
 * Reproducible project structuring
 
+
+
+
 ## 
 
 ## 🚫 N.B.
@@ -587,19 +593,16 @@ Also, using Conda for the Notebook analysis ensured:
 
 
 
-&nbsp; -This project is research-focused, not clinical
+  -This project is research-focused, not clinical
 
 
-
-&nbsp; -No diagnostic claims are made
+  -No diagnostic claims are made
 
   
-
-&nbsp; -No phenotype-based interpretation
-
+  -No phenotype-based interpretation
 
 
-&nbsp; -ACMG classification was intentionally excluded
+  -ACMG classification was intentionally excluded
 
 
 
@@ -608,6 +611,8 @@ Also, using Conda for the Notebook analysis ensured:
 
 
 These were intentionally excluded to keep the project focused on variant annotation and prioritization fundamentals.
+
+
 
 
 
@@ -640,6 +645,8 @@ This project successfully demonstrates a research-grade variant prioritization w
 
 
 * This pipeline forms a strong foundation for disease-focused or comparative genomics studies.
+
+
 
 
 
@@ -856,3 +863,4 @@ Each step produces interpretable intermediate outputs.
 
 ###### **📍 Field: Bioinformatics | Genomics | Variant Analysis \& Interpretation**
 
+###### [LinkedIn](www.linkedin.com/in/sanjana-ghosh-2a5b7c11d) | sanjanaghosh150@gmail.com | [Medium](www.https://medium.com/@sanjanaghosh25)
