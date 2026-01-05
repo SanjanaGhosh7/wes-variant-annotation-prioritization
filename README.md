@@ -204,16 +204,13 @@ This step was performed using bash scripts (`/scripts/wes_variant_calling_pipeli
    -Reference genome: GRCh38
 
 
-
    -Offline cache
-
 
 
    -Plugins and population frequency annotations enabled
 
-&nbsp; 
 
-&nbsp;  -Produced vep.vcf and vep.summary files
+   -Produced vep.vcf and vep.summary files
 
 
 
@@ -512,6 +509,7 @@ Also, using Conda for the Notebook analysis ensured:
 
 
 
+
 ## 
 
 ## 🛠 Technologies \& Tools Used
@@ -552,6 +550,8 @@ Also, using Conda for the Notebook analysis ensured:
 
 
 
+
+
 ## 🧠 Key Skills Demonstrated
 
 
@@ -581,6 +581,9 @@ Also, using Conda for the Notebook analysis ensured:
 
 
 * Reproducible project structuring
+
+
+
 
 
 
@@ -618,6 +621,9 @@ These were intentionally excluded to keep the project focused on variant annotat
 
 
 
+
+
+
 ## 
 
 ## 📝 Project Conclusion
@@ -645,6 +651,9 @@ This project successfully demonstrates a research-grade variant prioritization w
 
 
 * This pipeline forms a strong foundation for disease-focused or comparative genomics studies.
+
+
+
 
 
 
@@ -863,4 +872,4 @@ Each step produces interpretable intermediate outputs.
 
 ###### **📍 Field: Bioinformatics | Genomics | Variant Analysis \& Interpretation**
 
-###### [LinkedIn](www.linkedin.com/in/sanjana-ghosh-2a5b7c11d) | sanjanaghosh150@gmail.com | [Medium](www.https://medium.com/@sanjanaghosh25)
+###### [LinkedIn](www.linkedin.com/in/sanjana-ghosh-2a5b7c11d) | sanjanaghosh150@gmail.com | [Medium](www.medium.com/@sanjanaghosh25)
