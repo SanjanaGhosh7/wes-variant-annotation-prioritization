@@ -193,7 +193,7 @@ wes_chr22_project/
 
 
 
-This step was performed using bash scripts and standard command-line tools, without Conda, as system-installed tools were sufficient and stable.
+This step was performed using bash scripts (`/scripts/wes_variant_calling_pipeline.sh`) and standard command-line tools, without Conda, as system-installed tools were sufficient and stable.
 
 
 
@@ -260,7 +260,7 @@ Using Conda ensured:
   -Clean environment management
 
 
-
+This step was performed using bash script (`/scripts/vep_annotation.sh`).
 
 
 
@@ -273,7 +273,7 @@ Using Conda ensured:
 
 
 
-VEP stores detailed annotations inside the CSQ field, which must be structured before filtering.
+VEP stores detailed annotations inside the CSQ field, which must be structured before filtering. All these steps were performed in CLI.
 
 
 
