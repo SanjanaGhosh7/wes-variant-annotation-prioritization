@@ -96,19 +96,30 @@ It provides a baseline expectation against which disease cohorts can later be co
 
 
 
-Raw FASTQ
-│
-├── Quality control
-│
-├── Alignment to reference genome
-│
-├── Variant calling (VCF)
-│
-├── Variant annotation (VEP)
-│
-├── Variant prioritization
-│
-└── Exploratory analysis \& visualization
+Raw WES FASTQ files
+        │
+        ▼
+Quality Control (FastQC)
+        │
+        ▼
+Alignment to Reference Genome (GRCh38)
+        │
+        ▼
+Variant Calling (VCF generation)
+        │
+        ▼
+Variant Annotation (Ensembl VEP)
+        │
+        ▼
+Variant Prioritization
+  ├─ Canonical transcripts
+  ├─ Protein-coding variants
+  ├─ HIGH / MODERATE impact
+  └─ Rare alleles (gnomAD AF < 0.01)
+        │
+        ▼
+Exploratory Analysis & Visualization
+  (Impact vs AF, ClinVar overlay, summaries)
 
 
 
@@ -118,22 +129,19 @@ Raw FASTQ
 
 
 
-wes\_chr22\_project/
+wes_chr22_project/
+│
 ├── scripts/
-│   ├── wes\_variant\_calling\_pipeline.sh        # Alignment \& variant calling
-│   ├── vep\_annotation.sh                      # VEP annotation pipeline
-│   └── wes\_variant\_analysis.ipynb             # Downstream analysis \& plots
+│   ├── wes_variant_calling_pipeline.sh   # Alignment, post-processing & variant calling
+│   ├── vep_annotation.sh                 # Ensembl VEP-based variant annotation
+│   └── wes_variant_analysis.ipynb        # Downstream analysis & visualization
 │
 ├── results/
-│   ├── prioritized\_variants.tsv  # Final annotated variant table
-│   ├── \*.png                     # Generated figures
+│   ├── prioritized_variants.tsv          # Final filtered & annotated variant table
+│   └── *.png                             # Generated plots & figures
 │
-├── logs/
-│   └── \*.log                     # Execution logs
-│
-├── README.md
-├── environment.yml
-└── .gitignore
+├── README.md                             # Project documentation
+└── .gitignore                            # Excluded intermediate & system files
 
 
 
