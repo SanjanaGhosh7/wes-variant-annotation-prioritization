@@ -1,0 +1,120 @@
+############################
+# OS / Editor Artifacts
+############################
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+############################
+# Conda / Python
+############################
+# Conda environments (do NOT commit)
+miniconda3/
+anaconda3/
+.env
+.envs/
+conda-bld/
+__pycache__/
+*.pyc
+*.pyo
+
+############################
+# Jupyter
+############################
+.ipynb_checkpoints/
+
+############################
+# Logs
+############################
+logs/
+*.log
+
+############################
+# Temporary Files
+############################
+tmp/
+temp/
+*.tmp
+
+############################
+# FASTQ & Large Raw Data
+############################
+fastq/
+*.fastq
+*.fastq.gz
+*.fq.gz
+
+############################
+# Alignment & Intermediate BAMs
+############################
+*.sam
+*.bam
+*.bai
+*.cram
+*.crai
+
+############################
+# Reference Genome Files
+############################
+references/*.fa
+references/*.fasta
+references/*.fai
+references/*.dict
+references/*.amb
+references/*.ann
+references/*.bwt
+references/*.pac
+references/*.sa
+
+############################
+# GATK / Variant Calling Intermediates
+############################
+*.recal_data.table
+*.grp
+*.idx
+*.md5
+
+############################
+# VCFs (keep only final curated ones)
+############################
+*.vcf
+*.vcf.gz
+*.vcf.gz.tbi
+*.vcf.gz.csi
+
+# EXCEPTION: keep final outputs
+!results/*.vcf
+!results/*.vcf.gz
+!results/*.vcf.gz.tbi
+
+############################
+# VEP Cache (Very Large)
+############################
+.vep/
+vep_cache/
+
+############################
+# Notebook Outputs
+############################
+# Ignore auto-generated figures if desired
+# Uncomment if plots are regenerated
+# results/figures/
+
+############################
+# TSV / CSV
+############################
+# Keep final tables, ignore scratch tables
+*temp*.tsv
+*debug*.tsv
+
+############################
+# Credentials (Safety)
+############################
+*.key
+*.pem
+*.secret
+*.env
