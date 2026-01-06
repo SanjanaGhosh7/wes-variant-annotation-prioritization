@@ -107,12 +107,16 @@ It provides a baseline expectation against which disease cohorts can later be co
 5. **Variant Annotation (Ensembl VEP)**
    
 6. **Variant Prioritization**
-  ├─ Canonical transcripts
-  ├─ Protein-coding variants
-  ├─ HIGH / MODERATE impact
-  └─ Rare alleles (gnomAD AF < 0.01)
+   ─ Canonical transcripts
+   
+   ─ Protein-coding variants
+   
+   ─ HIGH / MODERATE impact
+   
+   ─ Rare alleles (gnomAD AF < 0.01)
+   
 
-7. **Exploratory Analysis & Visualization** (Impact vs AF, ClinVar overlay, summaries)
+8. **Exploratory Analysis & Visualization** (Impact vs AF, ClinVar overlay, summaries)
 
 
 
@@ -121,7 +125,7 @@ It provides a baseline expectation against which disease cohorts can later be co
 ## 🗂 Project Structure
 
 
-```text
+```
 wes_chr22_project/
 ├── scripts/
 │   ├── wes_variant_calling_pipeline.sh   # Alignment, post-processing & variant calling
@@ -275,16 +279,16 @@ VEP stores detailed annotations inside the CSQ field, which must be structured b
 **Command(bash):**
 
 
-
+```
 *bcftools +split-vep NA12878.chr22.vep.vcf \\*
 
 *-c Allele,Consequence,IMPACT,SYMBOL,Gene,Feature,BIOTYPE,CANONICAL,EXON,INTRON,HGVSc,HGVSp,gnomADe\_AF,SIFT,PolyPhen,CLIN\_SIG \\*
 
 *-o vep.split.vcf*
+```
 
 
-
-What this does:
+**What this does:**
 
 
 
@@ -307,16 +311,16 @@ What this does:
 **Command(bash):**
 
 
-
+```
 *bcftools view -i \\*
 
 *'INFO/CANONICAL="YES" \&\& INFO/BIOTYPE="protein\_coding" \&\& (INFO/IMPACT="HIGH" || INFO/IMPACT="MODERATE")' \\*
 
 *vep.split.vcf -o vep.prioritized.vcf*
+```
 
 
-
-Why this step?
+**Why this step?**
 
 
 
@@ -353,13 +357,13 @@ Why this step?
 **Command(bash):**
 
 
-
+```
 *bcftools view -i \\*
 
 *'INFO/gnomADe\_AF<0.01 || INFO/gnomADe\_AF="."' \\*
 
 *vep.prioritized.vcf -o vep.prioritized.rare.vcf*
-
+```
 
 
 **Why is AF filtering?**
@@ -382,7 +386,7 @@ Without it, our dataset contains:
 
 
 
-Why allow "." (missing AF)?
+**Why allow "." (missing AF)?**
 
 
 
@@ -405,16 +409,16 @@ Why allow "." (missing AF)?
 **Command(bash):**
 
 
-
+```
 *bcftools query -f \\*
 
 *'%CHROM\\t%POS\\t%REF\\t%ALT\\t%INFO/SYMBOL\\t%INFO/Consequence\\t%INFO/IMPACT\\t%INFO/HGVSc\\t%INFO/HGVSp\\t%INFO/gnomADe\_AF\\t%INFO/SIFT\\t%INFO/PolyPhen\\t%INFO/CLIN\_SIG\\n' \\*
 
 *vep.prioritized.rare.vcf > prioritized\_variants.tsv*
+```
 
 
-
-This table serves as the input for all downstream analysis.
+**This table serves as the input for all downstream analysis.**
 
 
 
