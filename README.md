@@ -107,6 +107,7 @@ It provides a baseline expectation against which disease cohorts can later be co
 5. **Variant Annotation (Ensembl VEP)**
    
 6. **Variant Prioritization**
+   
    ─ Canonical transcripts
    
    ─ Protein-coding variants
@@ -116,7 +117,7 @@ It provides a baseline expectation against which disease cohorts can later be co
    ─ Rare alleles (gnomAD AF < 0.01)
    
 
-8. **Exploratory Analysis & Visualization** (Impact vs AF, ClinVar overlay, summaries)
+7. **Exploratory Analysis & Visualization** (Impact vs AF, ClinVar overlay, summaries)
 
 
 
@@ -280,11 +281,11 @@ VEP stores detailed annotations inside the CSQ field, which must be structured b
 
 
 ```
-*bcftools +split-vep NA12878.chr22.vep.vcf \\*
+bcftools +split-vep NA12878.chr22.vep.vcf \\
 
-*-c Allele,Consequence,IMPACT,SYMBOL,Gene,Feature,BIOTYPE,CANONICAL,EXON,INTRON,HGVSc,HGVSp,gnomADe\_AF,SIFT,PolyPhen,CLIN\_SIG \\*
+-c Allele,Consequence,IMPACT,SYMBOL,Gene,Feature,BIOTYPE,CANONICAL,EXON,INTRON,HGVSc,HGVSp,gnomADe\_AF,SIFT,PolyPhen,CLIN\_SIG \\
 
-*-o vep.split.vcf*
+-o vep.split.vcf
 ```
 
 
@@ -312,11 +313,11 @@ VEP stores detailed annotations inside the CSQ field, which must be structured b
 
 
 ```
-*bcftools view -i \\*
+bcftools view -i \\
 
-*'INFO/CANONICAL="YES" \&\& INFO/BIOTYPE="protein\_coding" \&\& (INFO/IMPACT="HIGH" || INFO/IMPACT="MODERATE")' \\*
+'INFO/CANONICAL="YES" \&\& INFO/BIOTYPE="protein\_coding" \&\& (INFO/IMPACT="HIGH" || INFO/IMPACT="MODERATE")' \\
 
-*vep.split.vcf -o vep.prioritized.vcf*
+vep.split.vcf -o vep.prioritized.vcf
 ```
 
 
@@ -358,11 +359,11 @@ VEP stores detailed annotations inside the CSQ field, which must be structured b
 
 
 ```
-*bcftools view -i \\*
+bcftools view -i \\
 
-*'INFO/gnomADe\_AF<0.01 || INFO/gnomADe\_AF="."' \\*
+'INFO/gnomADe\_AF<0.01 || INFO/gnomADe\_AF="."' \\
 
-*vep.prioritized.vcf -o vep.prioritized.rare.vcf*
+vep.prioritized.vcf -o vep.prioritized.rare.vcf
 ```
 
 
@@ -410,11 +411,11 @@ Without it, our dataset contains:
 
 
 ```
-*bcftools query -f \\*
+bcftools query -f \\
 
-*'%CHROM\\t%POS\\t%REF\\t%ALT\\t%INFO/SYMBOL\\t%INFO/Consequence\\t%INFO/IMPACT\\t%INFO/HGVSc\\t%INFO/HGVSp\\t%INFO/gnomADe\_AF\\t%INFO/SIFT\\t%INFO/PolyPhen\\t%INFO/CLIN\_SIG\\n' \\*
+'%CHROM\\t%POS\\t%REF\\t%ALT\\t%INFO/SYMBOL\\t%INFO/Consequence\\t%INFO/IMPACT\\t%INFO/HGVSc\\t%INFO/HGVSp\\t%INFO/gnomADe\_AF\\t%INFO/SIFT\\t%INFO/PolyPhen\\t%INFO/CLIN\_SIG\\n' \\
 
-*vep.prioritized.rare.vcf > prioritized\_variants.tsv*
+vep.prioritized.rare.vcf > prioritized\_variants.tsv
 ```
 
 
